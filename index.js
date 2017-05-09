@@ -15,11 +15,11 @@ const sitePath = path.resolve(distPath, version);
 
 // 接口代理
 for (let key in api.dev) {
-  app.use(`/${key}`, proxy({
+  app.use(`/proxy/${key}`, proxy({
     target: api.dev[ key ],
     changeOrigin: true,
     pathRewrite: {
-      [`^/${key}`]: ''
+      '^/proxy': ''
     }
   }));
 }
