@@ -1,5 +1,5 @@
 /**
- * 请求代理
+ * 前端服务器
  */
 
 const express = require('express');
@@ -10,13 +10,21 @@ const app = express();
 const path = require('path');
 const { version, host, port, distPath, api } = require('./config');
 
-const sitePath = path.resolve(distPath, version);
+const argv = require('yargs')
+  .option('ver', {
+    default: version
+  })
+  .option('env', {
+    default: 'dev'
+  })
+  .argv;
 
+const sitePath = path.resolve(distPath, argv.ver);
 
 // 接口代理
-for (let key in api.dev) {
+for (let key in api[argv.env]) {
   app.use(`/proxy/${key}`, proxy({
-    target: api.dev[ key ],
+    target: api[argv.env][ key ],
     changeOrigin: true,
     pathRewrite: {
       '^/proxy': ''

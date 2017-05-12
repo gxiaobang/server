@@ -15,10 +15,12 @@ const api = {
 	// 开发环境
 	dev: {
 		basedata: 'http://10.0.31.72:8080',
+		room: 'http://10.0.31.72:8080',
 	},
 	// 测试环境
 	test: {
-		basedata: ''
+		basedata: 'http://10.0.31.75:8080',
+		arm: 'http://10.0.31.76:8080'
 	},
 	// 生产环境
 	prod: {
