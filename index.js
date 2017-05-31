@@ -37,7 +37,9 @@ app.use(express.static(sitePath));
 
 // 重定向到主页
 app.get('*', (req, res) => {
-  res.sendFile(`${sitePath}/index.html`);
+  // console.log(req.query)
+  let { lang = 'zh-cn' } = req.query;
+  res.sendFile(`${sitePath}/index_${lang}.html`);
 });
 
 
