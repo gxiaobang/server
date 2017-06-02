@@ -14,7 +14,7 @@ const argv = require('yargs')
   .option('ver', {
     default: version
   })
-  .option('env', {
+  .option('refer', {
     default: 'dev'
   })
   .argv;
@@ -22,9 +22,9 @@ const argv = require('yargs')
 const sitePath = path.resolve(distPath, argv.ver);
 
 // 接口代理
-for (let key in api[argv.env]) {
+for (let key in api[argv.refer]) {
   app.use(`/proxy/${key}`, proxy({
-    target: api[argv.env][ key ],
+    target: api[argv.refer][ key ],
     changeOrigin: true,
     pathRewrite: {
       '^/proxy': ''

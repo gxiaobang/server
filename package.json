@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "clean": "rm dist -rf"
   },
   "dependencies": {
     "express": "^4.15.2",
