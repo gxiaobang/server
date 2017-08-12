@@ -1,12 +1,12 @@
-## nodejs 服务器
+# Web服务器
 
-
+## 项目构建
 ### 安装
 ```bash
-yarn install
+npm install
 ```
 
 ### 运行
 ```bash
-yarn start
+npm start
 ```
