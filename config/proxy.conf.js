@@ -1,17 +1,20 @@
-/**
- * 接口代理
- */
+module.exports = {
+  // 本地环境
+  "local": {
+    '/api': {
+      target: '127.0.0.0:8080'
+    }
+  },
 
-const proxyTable = {
-	// 开发环境
-	dev: {
-	},
-	// 测试环境
-	test: {
-	},
-	// 生产环境
-	prod: {
-	}
-};
+  // 开发环境
+  "dev": {
+  },
 
-module.exports = proxyTable;
+  // 测试环境
+  "test": {
+  },
+
+  // 生产环境
+  "prod": {
+  }
+}
