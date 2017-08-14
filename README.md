@@ -2,14 +2,14 @@
 
 > 静态文件服务器
 
-## 项目构建
+## Build Setup
 
-### 安装
+# install dependencies
 ```bash
 npm install
 ```
 
-### 运行
+# serve with hot reload at localhost:8080
 ```bash
 npm start
 ```
