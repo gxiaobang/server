@@ -27,7 +27,8 @@ const argv = require('yargs')
 // 接口代理
 const proxyTable = require('./config/proxy.conf');
 for (let key in proxyTable[argv.proxy]) {
-  app.use('/' + key, proxy(proxyTable[argv.proxy][ key ]));
+  console.log('proxy: ' + key);
+  app.use(key, proxy(proxyTable[argv.proxy][ key ]));
 }
 
 // 静态文件
