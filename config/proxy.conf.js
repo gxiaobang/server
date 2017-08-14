@@ -2,7 +2,7 @@ module.exports = {
   // 本地环境
   "local": {
     '/api': {
-      target: '127.0.0.0:8080'
+      target: 'http://127.0.0.0:8080'
     }
   },
 
